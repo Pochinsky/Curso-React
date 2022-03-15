@@ -1,43 +1,45 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import { useState, useEffect } from 'react'
+import Header from './components/Header'
+import Form from './components/Form'
+import PatientsList from './components/PatientsList'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
+  // state of patients registered
+  const [ patients, setPatients] = useState([])
+  // state of patient register
+  const [patient, setPatient] = useState({})
+  // to remove patients
+  const removePatient = (id) => {
+    const actualizatedPatients = patients.filter((patientAux) => patientAux.id !== id)
+    setPatients(actualizatedPatients)
+  }
+  useEffect(() => {
+    const getLocalStorage = () => {
+      const patientsLocalStorage = JSON.parse(localStorage.getItem("pacientes")) ?? []
+      setPatients(patientsLocalStorage)
+    }
+    getLocalStorage()
+  }, [])
+  // to save patients in local storage
+  useEffect(() => {
+    localStorage.setItem("pacientes",JSON.stringify(patients))
+  }, [patients])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+    <div className="container mx-auto mt-5">
+      <Header />
+      <div className="mt-12 md:flex">
+        <Form 
+          patient={patient}
+          patients={patients}
+          setPatient={setPatient}
+          setPatients={setPatients} 
+        />
+        <PatientsList 
+          patients={patients}
+          setPatient={setPatient}
+          removePatient={removePatient}
+        />
+      </div>
     </div>
   )
 }
