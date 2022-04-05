@@ -1,4 +1,4 @@
-#React Online Course
+# React Online Course
 
 ## Descripcion (Description)
 
@@ -9,3 +9,4 @@ This repository contains the projects done on the completion of the online cours
 ## Proyectos del Curso (Course's Projects)
 
 1. App de Citas de Pacientes (Patient Appointments App)
+2. App de Control de Presupuesto (Budget Control App)
