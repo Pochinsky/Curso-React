@@ -1,12 +1,9 @@
-# React Online Course
+# App de Control de Presupuesto (Budget Control App)
 
-## Descripcion (Description)
+## Spanish Description
 
-Este repositorio alberga los proyectos realizados en el desarrollo del curso online de la plataforma Udemy "React - La Guia Completa: Hooks Context Redux MERN + 15 Apps" realizado por Juan Pablo De La Torre Valdez.
+App de control de presupuesto mediante el registro de gastos.
 
-This repository contains the projects done on the completion of the online course by Udemy web platform: "React - La Guia Completa: Hooks Context Redux MERN + 15 Apps" by Juan Pablo De La Torre Valdez.
+## English Description
 
-## Proyectos del Curso (Course's Projects)
-
-1. App de Citas de Pacientes (Patient Appointments App)
-2. App de Control de Presupuesto (Budget Control App)
+App of budget control through spendings register.
