@@ -1,9 +1,9 @@
-# App de Control de Presupuesto (Budget Control App)
+# App de Control de Presupuesto
 
-## Spanish Description
+## Descripción
 
-App de control de presupuesto mediante el registro de gastos.
+Aplicación de control de presupuesto mediante el registro de gastos.
 
-## English Description
+## Acceso a la App
 
-App of budget control through spendings register.
+Link: https://budgetcontrolreactapp.netlify.app/
