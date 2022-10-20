@@ -23,10 +23,10 @@ const WeatherProvider = ({ children }) => {
     try {
       const { city, country } = dataSearch;
       const appId = import.meta.env.VITE_API_KEY;
-      const url1 = `http://api.openweathermap.org/geo/1.0/direct?q=${city},${country}&limit=1&appid=${appId}`;
+      const url1 = `https://api.openweathermap.org/geo/1.0/direct?q=${city},${country}&limit=1&appid=${appId}`;
       const { data } = await axios(url1);
       const { lat, lon } = data[0];
-      const url2 = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${appId}`;
+      const url2 = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${appId}`;
       const { data: dataWeather } = await axios(url2);
       setResult(dataWeather);
     } catch (error) {
